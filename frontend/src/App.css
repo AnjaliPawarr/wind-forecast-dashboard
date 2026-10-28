@@ -1,0 +1,229 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #17251f;
+  background: #f4f7f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.page {
+  max-width: 1240px;
+  margin: auto;
+  padding: 28px 32px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #dce5df;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Manrope, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  color: white;
+  background: #147d58;
+  font-size: 25px;
+}
+
+.period {
+  color: #476257;
+  background: #e5eee8;
+  border-radius: 20px;
+  padding: 8px 13px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.intro { padding: 38px 0 26px; }
+
+.eyebrow {
+  color: #18845e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.intro h1, .panel h2 {
+  font-family: Manrope, sans-serif;
+  letter-spacing: -1px;
+}
+
+.intro h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 10px 0;
+}
+
+.intro > p:last-child { color: #66766e; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.metric, .panel {
+  background: white;
+  border: 1px solid #e3eae5;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px #1d39240a;
+}
+
+.metric { padding: 21px; }
+
+.metric p { color: #64746b; font-size: 13px; margin: 0; }
+
+.metric h2 {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(23px, 2.3vw, 30px);
+  margin: 16px 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.metric h2 small { font-size: 13px; color: #6c7b72; }
+
+.metric span { color: #839087; font-size: 11px; }
+
+.panel { padding: 24px; margin-bottom: 22px; }
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.panel-heading h2 { margin: 7px 0 0; font-size: 22px; }
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #68776f;
+  font-size: 12px;
+}
+
+.legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+
+.actual-dot, .actual-bar { background: #13815a; }
+.forecast-dot, .forecast-bar { background: #a7d7bd; }
+
+.chart {
+  height: 260px;
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  border-bottom: 1px solid #dce6df;
+  padding-top: 12px;
+}
+
+.bar-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  color: #77857c;
+  font-size: 10px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 220px;
+  width: 100%;
+}
+
+.bar {
+  width: 42%;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+}
+
+.chart-note {
+  color: #87938c;
+  font-size: 11px;
+  margin-top: 16px;
+}
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+th {
+  color: #6d7b73;
+  background: #f7f9f7;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+td, th {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf1ee;
+  white-space: nowrap;
+}
+
+tbody tr:hover { background: #f7faf8; }
+
+.positive { color: #b66c23; }
+.negative { color: #147b58; }
+.error { color: #b42318; }
+
+footer {
+  padding: 16px 0;
+  color: #819087;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+@media (max-width: 850px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page { padding: 20px 16px; }
+}
+
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+  .panel { padding: 16px; }
+  .panel-heading { align-items: flex-start; flex-direction: column; }
+}
